@@ -1,27 +1,20 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
-import axios from 'axios';
+import { View, Text,StyleSheet } from 'react-native'
+import React from 'react'
 
 const App = () => {
-  const [data,setData]=useState();
-
-  const getData = ()=>{
-    axios.get('https://jsonplaceholder.typicode.com/posts').then((response)=>{
-      console.log(response.data);
-      setData(response.data);
-
-    })
-  }
-
-
   return (
-    <View>
-      <Text>The data is : {data}</Text>
-  <Button onPress={getData} title='getData' />
+    <View style={styles.container}>
+      <Text style={{color:'blue','fontSize':30,'fontWeight':300,'margin-top':100}}>Welocme To First Application</Text>
     </View>
   )
 }
 
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor:'#f4dbdb',
+  }
+})
 export default App
 
-const styles = StyleSheet.create({})
+
